@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap');
+
+:root {
+  --main-bg-color: #111;
+  --main-color: #ddd;
+  --red-color: #ff3535;
+  --sec-bg-color: #424040;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  font-family: 'Rubik', sans-serif, Helvetica;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre-big.png');
+}
+
+#options-menu {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  margin: 100px auto;
+  width: 800px;
+}
+
+#options-menu p {
+  height: 50px;
+  text-align: center;
+  color: var(--main-color);
+  font-size: 4rem;
+}
+
+#options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  column-gap: 200px;
+}
+
+#options i {
+  padding-top: 100px;
+  font-size: 10rem;
+}
+
+#options i:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+#main-table {
+  display: none;
+  width: 525px;
+  margin: 150px auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 100px;
+}
+
+#gameover {
+  opacity: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  width: 525px;
+  height: 525px;
+  margin: 150px auto;
+  left: 0;
+  right: 0;
+}
+
+#replay {
+  display: none;
+  color: var(--main-color);
+  background-color: var(--red-color);
+  width: 180px;
+  height: 60px;
+  font-size: 3rem;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+#replay:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.card {
+  display: flex;
+  border: 5px solid var(--main-color);
+  width: 175px;
+  height: 175px;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.far,
+.fas {
+  color: var(--main-color);
+  margin: 0 auto;
+  font-size: 100px;
+  align-self: center;
+  justify-self: center;
+}
+
+.fa-times {
+  color: var(--red-color);
+}
+
+#win,
+#tie,
+#lose {
+  display: none;
+  text-align: center;
+  position: absolute;
+  width: 600px;
+  margin: auto;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+}
+
+.result {
+  color: var(--main-color);
+  font-size: 6rem;
+  text-align: center;
+}
+
+#tab1,
+#tab2,
+#tab3 {
+  border-top: none;
+}
+
+#tab1,
+#tab4,
+#tab7 {
+  border-left: none;
+}
+
+#tab3,
+#tab6,
+#tab9 {
+  border-right: none;
+}
+
+#tab7,
+#tab8,
+#tab9 {
+  border-bottom: none;
+}
+
+#score-menu {
+  display: none;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  width: 550px;
+  margin: 0 auto;
+  row-gap: 20px;
+}
+
+/* footer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 130px;
+}
+
+footer p{
+  color: var(--main-color);
+  background-color: var(--red-color);
+  font-size: 1.5rem;
+  align-self: center;
+  text-align: center;
+  justify-self: center;
+} */
+
+.score-text {
+  color: var(--main-color);
+  font-size: 2rem;
+  text-align: center;
+  align-self: center;
+}
+
+@media (max-width: 850px) {
+  #options-menu {
+    width: 600px;
+  }
+
+  #main-table {
+    margin-bottom: 50px;
+  }
+
+  #replay {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 3rem;
+    width: 160px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 610px) {
+  #options-menu {
+    width: 415px;
+  }
+
+  #options {
+    width: 415px;
+    column-gap: 100px;
+  }
+
+  #main-table {
+    margin: 80px auto;
+    width: 390px;
+    margin-bottom: 50px;
+  }
+
+  .card {
+    width: 130px;
+    height: 130px;
+  }
+
+  #gameover {
+    width: 390px;
+    height: 390px;
+    margin: 80px auto;
+  }
+
+  #replay {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .result {
+    font-size: 3.5rem;
+  }
+
+  #win,
+  #tie,
+  #lose {
+    width: 415px;
+  }
+
+  #score-menu {
+    width: 415px;
+  }
+
+  .score-text {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  #options-menu {
+    width: 390px;
+  }
+
+  #options {
+    width: 390px;
+    column-gap: 80px;
+  }
+
+  #options i {
+    font-size: 9rem;
+  }
+
+  #main-table {
+    width: 360px;
+  }
+
+  .card {
+    width: 120px;
+    height: 120px;
+  }
+
+  #score-menu {
+    width: 400px;
+  }
+
+  #gameover {
+    width: 390px;
+    height: 390px;
+  }
+
+  #win,
+  #tie,
+  #lose {
+    width: 250px;
+  }
+
+  .result {
+    font-size: 3rem;
+  }
+
+  #replay {
+    font-size: 2.5rem;
+    width: 130px;
+    height: 45px;
+    top: 650px;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 365px) {
+  #options-menu {
+    width: 350px;
+  }
+
+  #options {
+    width: 350px;
+    column-gap: 50px;
+  }
+
+  #options i {
+    font-size: 7rem;
+  }
+
+  #main-table {
+    margin-bottom: 40px;
+    width: 345px;
+  }
+
+  .card {
+    width: 115px;
+    height: 115px;
+  }
+
+  #gameover {
+    width: 345px;
+    height: 345px;
+    margin-bottom: 40px;
+  }
+
+  #score-menu {
+    width: 360px;
+  }
+
+  .score-text {
+    font-size: 1.8rem;
+    align-self: center;
+  }
+
+  #win,
+  #tie,
+  #lose {
+    width: 225px;
+  }
+
+  .result {
+    font-size: 2.8rem;
+  }
+
+  #replay {
+    width: 120px;
+    height: 45px;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
